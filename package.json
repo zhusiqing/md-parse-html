@@ -17,5 +17,10 @@
     "highlight.js": "^9.15.6",
     "marked": "^0.6.1"
   },
+  "homepage": "https://github.com/zhusiqing/md-parse-html#readme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zhusiqing/md-parse-html.git"
+  },
   "keywords": ["md", "markdown", "markdown parse", "md parse", "markdown to html", "md to html"]
 }
