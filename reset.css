@@ -1,0 +1,133 @@
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+/* 布局容器 */
+.container {
+  display: flex;
+  height: 100%;
+}
+/* 控制边侧栏显示和隐藏按钮 */
+.close {
+  color: #ccc;
+  cursor: pointer;
+  position: absolute;
+  right: 6px;
+  top: 0;
+  font-weight: 600;
+  font-size: 20px;
+}
+.close:hover {
+  color: #fff;
+}
+.close.hidden {
+  display: none;
+}
+.open {
+  display: none;
+  color: #fff;
+  cursor: pointer;
+  position: fixed;
+  left: 5px;
+  top: 0;
+  font-weight: 600;
+  font-size: 20px;
+  z-index: 1000;
+}
+.open:hover {
+  color: #333;
+}
+.open.show {
+  display: block;
+  color: #bbb;
+}
+/* 边侧栏 */
+.container .sider {
+  position: relative;
+  height: 100%;
+  max-width: 400px;
+  min-width: 220px;
+  overflow: auto;
+  border-right: 2px solid #ddd;
+  background-color: #282B33;
+  user-select: none;
+  /* 隐藏边侧栏过渡动画 */
+  transition: all .3s;
+  top: 0;
+  left: 0;
+}
+/* 隐藏边侧栏 */
+.container .sider.hidden {
+  transform: translateX(-100%);
+  min-width: initial;
+}
+.sider ul {
+  list-style: none;
+  padding-left: 24px;
+  overflow: hidden;
+}
+.sider ul.hidden {
+  height: 0;
+}
+.sider > ul {
+  padding-left: 0;
+}
+.sider li {
+  color: #BFC0C2;
+  font-size: 14px;
+}
+/* 边侧栏一行 */
+.sider li .box {
+  padding: 5px 10px;
+}
+.sider li .box.active {
+  background-color: #474b56;
+}
+.sider li .box.active .sider-menus {
+  color: #eee;
+}
+.sider li .box:hover {
+  background-color: #393D49;
+  color: #eee;
+}
+/* 边侧栏图标 */
+.sider .icon {
+  width: 14px;
+  height: 14px;
+  vertical-align: -2px;
+  fill: currentColor;
+  overflow: hidden;
+  cursor: pointer;
+}
+.sider .icon:hover {
+  color: #eee;
+}
+.sider .down {
+  color: #ddd;
+}
+.sider .up {
+  color: #ddd;
+  transform: rotate(-90deg);
+}
+/* 边侧栏锚点 */
+.sider .sider-menus {
+  text-decoration: none;
+  color: #BFC0C2;
+}
+.sider .sider-menus:visited, .sider .sider-menus:active {
+  color: #BFC0C2;
+}
+.sider .sider-menus:hover {
+  color: #eee;
+}
+/* .sider .sider-menus.active {
+  background-color: #474b56;
+} */
+
+/* markdown主体内容 */
+.main-content {
+  flex: 1;
+  height: 100%;
+  overflow-y: auto;
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    <%- mdCss -%>
+  </style>
+  <style>
+      <%- css -%>
+  </style>
+</head>
+<body>
+  <!-- <svg class="icon down" aria-hidden="true">
+        <use xlink:href="#icon-xiala"></use>
+      </svg> -->
+  <div class="container">
+    <% if (sider.length) { %>
+      <div class="sider">
+        <!-- 一级 -->
+        <ul>
+          <% for(let a = 0; a < sider.length; a++) {%>
+            <li>
+              <div class="box">
+                <% if (sider[a].children.length) { %>
+                  <svg class="icon down" aria-hidden="true">
+                    <use xlink:href="#icon-xiala"></use>
+                  </svg>
+                <% } %>
+                <a href="#<%= sider[a].id %>" class="sider-menus">
+                  <span><%= sider[a].text %></span>
+                </a>
+              </div>
+              <% if (sider[a].children.length) { %>
+                <!-- 二级 -->
+                <ul>
+                  <% for(let b = 0; b < sider[a].children.length; b++) {%>
+                    <li>
+                      <div class="box">
+                        <% if (sider[a].children[b].children.length) { %>
+                          <svg class="icon down" aria-hidden="true">
+                            <use xlink:href="#icon-xiala"></use>
+                          </svg>
+                        <% } %>
+                        <a href="#<%= sider[a].children[b].id %>" class="sider-menus">
+                          <span><%= sider[a].children[b].text %></span>
+                        </a>
+                      </div>
+                      <% if (sider[a].children[b].children.length) { %>
+                        <!-- 三级 -->
+                        <ul>
+                          <% for(let c = 0; c < sider[a].children[b].children.length; c++) {%>
+                            <li>
+                              <div class="box">
+                                <% if (sider[a].children[b].children[c].children.length) { %>
+                                  <svg class="icon down" aria-hidden="true">
+                                    <use xlink:href="#icon-xiala"></use>
+                                  </svg>
+                                <% } %>
+                                <a href="#<%= sider[a].children[b].children[c].id %>" class="sider-menus">
+                                  <span><%= sider[a].children[b].children[c].text %></span>
+                                </a>
+                              </div>
+                              <% if (sider[a].children[b].children[c].children.length) { %>
+                                <!-- 四级 -->
+                                <ul>
+                                    <% for(let d = 0; d < sider[a].children[b].children[c].children.length; d++) {%>
+                                      <li>
+                                        <div class="box">
+                                          <% if (sider[a].children[b].children[c].children[d].children.length) { %>
+                                            <svg class="icon down" aria-hidden="true">
+                                              <use xlink:href="#icon-xiala"></use>
+                                            </svg>
+                                          <% } %>
+                                          <a href=#"<%= sider[a].children[b].children[c].children[d].id %>" class="sider-menus">
+                                            <span><%= sider[a].children[b].children[c].children[d].text %></span>
+                                          </a>
+                                        </div>
+
+                                        <% if (sider[a].children[b].children[c].children[d].children.length) { %>
+                                          <!-- 五级 -->
+                                          <ul>
+                                            <% for(let e = 0; e < sider[a].children[b].children[c].children[d].children.length; e++) {%>
+                                              <li>
+                                                <div class="box">
+                                                  <% if (sider[a].children[b].children[c].children[d].children[e].children.length) { %>
+                                                    <svg class="icon down" aria-hidden="true">
+                                                      <use xlink:href="#icon-xiala"></use>
+                                                    </svg>
+                                                  <% } %>
+                                                  <a href=#"<%= sider[a].children[b].children[c].children[d].children[e].id %>" class="sider-menus">
+                                                    <span><%= sider[a].children[b].children[c].children[d].children[e].text %></span>
+                                                  </a>
+                                                </div>
+                                                <% if (sider[a].children[b].children[c].children[d].children[e].children.length) { %>
+                                                  <!-- 六级 -->
+                                                  <ul>
+                                                    <% for(let f = 0; f < sider[a].children[b].children[c].children[d].children[e].children.length; f++) {%>
+                                                      <li>
+                                                        <div class="box">
+                                                          <!-- <svg class="icon down" aria-hidden="true">
+                                                            <use xlink:href="#icon-xiala"></use>
+                                                          </svg> -->
+                                                          <a href=#"<%= sider[a].children[b].children[c].children[d].children[e].children[f].id %>" class="sider-menus">
+                                                            <span><%= sider[a].children[b].children[c].children[d].children[e].children[f].text %></span>
+                                                          </a>
+                                                        </div>
+                                                      </li>
+                                                    <% } %>
+                                                  </ul>
+                                                <% } %>
+                                              </li>
+                                            <% } %>
+                                          </ul>
+                                        <% } %>
+                                      </li>
+                                    <% } %>
+                                </ul>
+                              <% } %>
+                            </li>
+                          <% } %>
+                        </ul>
+                      <% } %>
+                    </li>
+                  <% } %>
+                </ul>
+              <% } %>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    <% } %>
+
+    <div class="main-content">
+
+      <%- html -%>
+
+    </div>
+  </div>
+
+
+  <script>
+    !function(a){var e,c='<svg><symbol id="icon-xiala" viewBox="0 0 1024 1024"><path d="M0 127.619858C0 57.137357 57.24888 0 127.619858 0L896.380141 0C966.862643 0 1024 57.24888 1024 127.619858L1024 896.380141C1024 966.862643 966.751117 1024 896.380141 1024L127.619858 1024C57.137357 1024 0 966.751117 0 896.380141L0 127.619858ZM466.876563 681.718099C491.88828 711.222528 532.093696 711.631373 557.452004 681.718099L818.802669 373.422496C843.814387 343.918066 832.018349 320 794.029114 320L230.299453 320C191.605677 320 180.167588 343.50922 205.525895 373.422496L466.876563 681.718099Z"  ></path></symbol></svg>',t=(e=document.getElementsByTagName("script"))[e.length-1].getAttribute("data-injectcss");if(t&&!a.__iconfont__svg__cssinject__){a.__iconfont__svg__cssinject__=!0;try{document.write("<style>.svgfont {display: inline-block;width: 1em;height: 1em;fill: currentColor;vertical-align: -0.1em;font-size:16px;}</style>")}catch(e){console&&console.log(e)}}!function(e){if(document.addEventListener)if(~["complete","loaded","interactive"].indexOf(document.readyState))setTimeout(e,0);else{var t=function(){document.removeEventListener("DOMContentLoaded",t,!1),e()};document.addEventListener("DOMContentLoaded",t,!1)}else document.attachEvent&&(n=e,o=a.document,i=!1,d=function(){i||(i=!0,n())},(c=function(){try{o.documentElement.doScroll("left")}catch(e){return void setTimeout(c,50)}d()})(),o.onreadystatechange=function(){"complete"==o.readyState&&(o.onreadystatechange=null,d())});var n,o,i,d,c}(function(){var e,t,n,o,i,d;(e=document.createElement("div")).innerHTML=c,c=null,(t=e.getElementsByTagName("svg")[0])&&(t.setAttribute("aria-hidden","true"),t.style.position="absolute",t.style.width=0,t.style.height=0,t.style.overflow="hidden",n=t,(o=document.body).firstChild?(i=n,(d=o.firstChild).parentNode.insertBefore(i,d)):o.appendChild(n))})}(window);
+  </script>
+  <script>
+    window.onload = function () {
+      const icons = document.querySelectorAll('.icon');
+      for (let index = 0; index < icons.length; index++) {
+        const icon = icons[index];
+        icon.addEventListener('click', (e) => {
+          const parentElement = icon.parentElement;
+          const ul = parentElement.nextElementSibling;
+          ul.classList.toggle('hidden')
+          icon.classList.toggle('up')
+        })
+      }
+    }
+  </script>
+</body>
+</html>
